@@ -42,6 +42,7 @@ df[['species', 'm']] = df['species'].str.split('_', expand=True)
 print(df)
 series = df.groupby(['OG', 'species']).size()
 
+#Filter unused indexes
 not_index = ['unknown_0', '302047', '40157', '8962', '8845', '8801', '9708', '9694', '9767', '9901', '9807', 'unknown_1', '9778', '9818', 'unknown_2', 'unknown_3', 'unknown_4', 'unknown_5', 'unknown_6', 'unknown_7', 'unknown_8', 'unknown_9', 'unknown_10', 'unknown_11', 'unknown_12', 'unknown_13', 'unknown_14', 'unknown_15', 'unknown_16', 'unknown_17', 'unknown_18', 'unknown_19', 'unknown_20', 'unknown_21', 'unknown_22', 'unknown_23', 'unknown_24', 'unknown_25', 'unknown_26', 'unknown_27', 'unknown_28']
 Taxid_list = [x for x in Taxid_list if x not in not_index]
 
